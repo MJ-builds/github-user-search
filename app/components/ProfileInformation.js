@@ -92,9 +92,9 @@ export const ProfileInformation = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 pt-8 gap-4 md:gap-7">
-            <div className="flex flex-row gap-1 text-sm md:text-md ">
+            <div className="flex flex-row gap-2 text-sm md:text-md ">
               <svg
-                className="mr-4 scale-75 md:scale-100"
+                className="mr-3 scale-75 md:scale-100"
                 height="20"
                 width="14"
                 xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +132,7 @@ export const ProfileInformation = () => {
                 </span>
               )}
             </div>
-            <div className="flex flex-row text-sm md:text-md">
+            <div className="flex flex-row gap-1 text-sm md:text-md">
               <svg
                 className="mr-3 scale-75 md:scale-100"
                 height="20"
