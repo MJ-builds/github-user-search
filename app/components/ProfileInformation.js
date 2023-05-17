@@ -19,7 +19,7 @@ export const ProfileInformation = () => {
   if (profileData.message === "Not Found") {
     return (
       <div className=" text-[#4B6A9B] dark:text-[#ffffff] md:p-11 grid grid-cols-1 md:grid-cols-1 p-5 bg-[#FEFEFE] dark:bg-[#1E2A47] rounded-xl shadow-sm md:w-[730px] md:h-[444px]">
-        <div>User not found...</div>
+        <div>User not found - please try again.</div>
       </div>
     );
   }

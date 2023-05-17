@@ -38,7 +38,7 @@ export const Search = () => {
           <div className="whitespace-nowrap text-xs md:text-base mr-2 md:mr-5 text-red-600">No result</div>
         )}
         <button
-          className="bg-[#0079FF] hover:bg-[#60ABFF] text-white text-[12px] md:text-lg h-[70%] md:h-[80%] md:w-[15%] w-[30%] max-w-[120px] min-w-[80px] mr-3 md:mr-2 rounded-xl"
+          className="bg-[#0079FF] hover:bg-[#60ABFF] text-white text-[12px] md:text-lg h-[70%] md:h-[80%] md:w-[15%] w-[30%] max-w-[120px] md:min-w-[120px] min-w-[80px] mr-3 md:mr-2 rounded-xl"
           type="submit"
         >
           Search
