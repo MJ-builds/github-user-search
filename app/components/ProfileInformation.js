@@ -16,6 +16,13 @@ export const ProfileInformation = () => {
   if (!profileData) {
     return null;
   }
+  if (profileData.message === "Not Found") {
+    return (
+      <div className=" text-[#4B6A9B] dark:text-[#ffffff] md:p-11 grid grid-cols-1 md:grid-cols-1 p-5 bg-[#FEFEFE] dark:bg-[#1E2A47] rounded-xl shadow-sm md:w-[730px] md:h-[444px]">
+        <div>User not found...</div>
+      </div>
+    );
+  }
 
   console.log(profileData);
 
@@ -26,7 +33,7 @@ export const ProfileInformation = () => {
   const year = date.format("YYYY");
 
   return (
-    <div className=" text-[#4B6A9B] dark:text-[#ffffff] md:p-11 grid grid-cols-1 md:grid-cols-1 p-5 bg-[#FEFEFE] dark:bg-[#1E2A47] rounded-lg shadow-sm md:w-[730px] md:h-[444px]">
+    <div className=" text-[#4B6A9B] dark:text-[#ffffff] md:p-11 grid grid-cols-1 md:grid-cols-1 p-5 bg-[#FEFEFE] dark:bg-[#1E2A47] rounded-xl shadow-sm md:w-[730px] md:h-[444px]">
       <div className="grid grid-cols-1 md:flex">
         <div className="md:mr-10">
           <img
@@ -61,7 +68,7 @@ export const ProfileInformation = () => {
               This profile has no bio
             </div>
           )}
-          <div className="bg-[#F6F8FF] dark:bg-[#141D2F] rounded-lg w-auto mt-3">
+          <div className="bg-[#F6F8FF] dark:bg-[#141D2F] rounded-xl w-auto mt-3">
             <div className="grid grid-flow-col p-5 md:text-sm text-[10px] ">
               <div>
                 Repos
@@ -97,7 +104,13 @@ export const ProfileInformation = () => {
                   fill="currentColor"
                 />
               </svg>
-              {profileData.location ? <span>{profileData.location}</span> : <span className="text-[#4b6a9b7f] dark:text-[#ffffff80]">Not Available</span>}
+              {profileData.location ? (
+                <span>{profileData.location}</span>
+              ) : (
+                <span className="text-[#4b6a9b7f] dark:text-[#ffffff80]">
+                  Not Available
+                </span>
+              )}
             </div>
             <div className="flex flex-row gap-1 text-sm md:text-md">
               <svg
@@ -114,7 +127,9 @@ export const ProfileInformation = () => {
               {profileData.twitter_username ? (
                 <span>{profileData.twitter_username}</span>
               ) : (
-                <span className="text-[#4b6a9b7f] dark:text-[#ffffff80]">Not Available</span>
+                <span className="text-[#4b6a9b7f] dark:text-[#ffffff80]">
+                  Not Available
+                </span>
               )}
             </div>
             <div className="flex flex-row text-sm md:text-md">
@@ -137,7 +152,9 @@ export const ProfileInformation = () => {
                 {profileData.blog ? (
                   <span>{profileData.blog}</span>
                 ) : (
-                  <span className="text-[#4b6a9b7f] dark:text-[#ffffff80]">Not Available</span>
+                  <span className="text-[#4b6a9b7f] dark:text-[#ffffff80]">
+                    Not Available
+                  </span>
                 )}
               </a>
             </div>
@@ -152,7 +169,13 @@ export const ProfileInformation = () => {
                   <path d="M10.858 1.558L1.7.167A1.477 1.477 0 00.517.492 1.49 1.49 0 000 1.608v17.559c0 .458.375.833.833.833h2.709v-4.375c0-.808.65-1.458 1.458-1.458h2.083c.809 0 1.459.65 1.459 1.458V20h3.541V3a1.46 1.46 0 00-1.225-1.442zM4.583 12.292h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm4.167 7.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zM18.85 9.035l-5.933-1.242V20h5.625A1.46 1.46 0 0020 18.542V10.46c0-.688-.47-1.274-1.15-1.425zM16.875 17.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25z" />
                 </g>
               </svg>
-              {profileData.company ? <span>{profileData.company}</span> : <span className="text-[#4b6a9b7f] dark:text-[#ffffff80]">Not Available</span>}
+              {profileData.company ? (
+                <span>{profileData.company}</span>
+              ) : (
+                <span className="text-[#4b6a9b7f] dark:text-[#ffffff80]">
+                  Not Available
+                </span>
+              )}
             </div>
           </div>
         </div>

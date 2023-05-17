@@ -5,7 +5,7 @@ import { useGithubContext } from "../context/GithubContext";
 
 
 export const Search = () => {
-  const { setActiveProfile, fetchProfile } = useGithubContext();
+  const { setActiveProfile, fetchProfile, profileData } = useGithubContext();
   const [inputValue, setInputValue] = useState("");
 
   const onChangeHandler = (e) => {
@@ -19,7 +19,7 @@ export const Search = () => {
   };
 
   return (
-    <div className="flex h-[70px] text-black dark:text-[#ffffff] bg-[#FEFEFE] dark:bg-[#1E2A47] rounded-lg mb-5 shadow-lg md:w-[730px] md:h-[69px]">
+    <div className="flex h-[70px] text-black dark:text-[#ffffff] bg-[#FEFEFE] dark:bg-[#1E2A47] rounded-xl mb-5 shadow-lg md:w-[730px] md:h-[69px]">
       <form
         className="flex justify-between items-center w-full"
         onSubmit={onSubmitHandler}
@@ -34,8 +34,11 @@ export const Search = () => {
             onChange={onChangeHandler}
           />
         </div>
+        {profileData.message === "Not Found" && (
+          <div className="whitespace-nowrap text-xs md:text-base mr-2 md:mr-5 text-red-600">No result</div>
+        )}
         <button
-          className="bg-[#0079FF] hover:bg-[#60ABFF] text-white text-[12px] md:text-lg h-[70%] md:h-[80%] md:w-[15%] w-[30%] max-w-[120px] mr-3 md:mr-2 rounded-xl"
+          className="bg-[#0079FF] hover:bg-[#60ABFF] text-white text-[12px] md:text-lg h-[70%] md:h-[80%] md:w-[15%] w-[30%] max-w-[120px] min-w-[80px] mr-3 md:mr-2 rounded-xl"
           type="submit"
         >
           Search
