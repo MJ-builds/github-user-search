@@ -18,6 +18,10 @@ export const Search = () => {
     fetchProfile(inputValue);
   };
 
+  if (!profileData) {
+    return null;
+  }
+
   return (
     <div className="flex h-[70px] text-black dark:text-[#ffffff] bg-[#FEFEFE] dark:bg-[#1E2A47] rounded-xl mb-5 shadow-lg md:w-[730px] md:h-[69px]">
       <form
@@ -35,7 +39,7 @@ export const Search = () => {
           />
         </div>
         {profileData.message === "Not Found" && (
-          <div className="whitespace-nowrap text-xs md:text-base mr-2 md:mr-5 text-red-600">No result</div>
+          <div className="whitespace-nowrap text-xs md:text-base mr-2 md:mr-5 text-red-600">No results</div>
         )}
         <button
           className="bg-[#0079FF] hover:bg-[#60ABFF] text-white text-[12px] md:text-lg h-[70%] md:h-[80%] md:w-[15%] w-[30%] max-w-[120px] md:min-w-[120px] min-w-[80px] mr-3 md:mr-2 rounded-xl"
